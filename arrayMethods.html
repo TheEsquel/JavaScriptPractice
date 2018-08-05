@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <script language="JavaScript">
+
+        // forEach
+        let array1 = ['one', 'two' , 'three']
+        array1.forEach((item, i , array1)=>{
+            document.write(item + `<br>`)
+        })
+        document.write(`<hr>`)
+
+        //  filter
+
+        let array2 = [1, -1, 2, -3, 0, 4]
+        let array2Positive = array2.filter(number => 
+        {
+            return number > 0
+        })
+        //  filter  проверка на простое число
+        let array3 = []
+        for (let i =0 ; i <=20 ; i++)
+        {
+            array3.push(i)
+        }
+        document.write(array3+`<br>`)
+        let array3Prime = array3.filter(number => 
+        {
+            let count = 0;            
+            for(let i = 1; i <= number; i++)
+            {
+                if(number % i) continue
+                count++
+            }
+            if(count == 2) return true
+        })
+        document.write(`prime number are: ` + array3Prime)
+    </script>
+    <body>
+    
+    </body>
+</html>
