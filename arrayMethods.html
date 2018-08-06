@@ -8,21 +8,22 @@
     </head>
     <script language="JavaScript">
 
-        // forEach
+        //  forEach
         let array1 = ['one', 'two' , 'three']
         array1.forEach((item, i , array1)=>{
             document.write(item + `<br>`)
         })
         document.write(`<hr>`)
 
-        //  filter
+        //   filter
 
         let array2 = [1, -1, 2, -3, 0, 4]
         let array2Positive = array2.filter(number => 
         {
             return number > 0
         })
-        //  filter  проверка на простое число
+        //   filter  проверка на простое число
+
         let array3 = []
         for (let i =0 ; i <=20 ; i++)
         {
@@ -39,7 +40,20 @@
             }
             if(count == 2) return true
         })
-        document.write(`prime number are: ` + array3Prime)
+        document.write(`prime number are: ` + array3Prime + `<hr>`)
+        
+        //   map  для  трансформации  массива 
+
+        let array4 = ['one' , 'two', 'three', 'four' , 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+        let array4Length = array4.map((name) => 
+        {
+            return name.length
+        })
+        document.write(array4Length + `<hr>`)
+
+
+        
+
     </script>
     <body>
     
