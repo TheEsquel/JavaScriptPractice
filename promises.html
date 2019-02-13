@@ -4,10 +4,70 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="promises.js"></script>
     </head>
 
     <body>
-    1
+        <div class='img'></div>
+        <script>
+        
+        // function makeError(n){
+        //     const errorPromise = new Promise(function(resolve, reject){
+        //     setTimeout(function(){
+        //         reject('error message')
+        //     }, n)
+        // })
+        // }        
+        // makeError(2000);
+        
+        // const getFile = () => {
+        //     return fetch ('pic.jpg')
+        //         .then((responce) => {
+        //             console.log(responce.url);
+        //             const img = document.createElement('img');
+        //             img.src = responce.url
+        //             document.querySelector('.img').appendChild(img)
+        //             fetch('pic2.jpg')
+        //                 .then((responce) => {
+        //                     console.log(responce);
+        //                     const img2 = document.createElement('img')
+        //                     img2.src = responce.url
+        //                     document.querySelector('.img').appendChild(img2)
+        //                 })
+                        
+        //         })
+        // }
+        // getFile();
+
+    function getFiles () {
+        return new Promise(function(resolve, reject){
+           resolve (fetch('pic.jpg'))
+                
+        })                        
+    }    
+    getFiles()
+        .then((responce) => {
+            console.log(responce);
+            return new Promise((resolve, reject) => {
+                resolve (fetch('pic2.jpg'))
+            })
+        })
+        .then((responce) => {
+            console.log(responce);
+            console.log('ok');
+            
+            
+        })
+
+            
+        </script>
+
     </body>
 </html>
+
+<!-- Промис ходит за файлом и показывает console.log()
+
+Написать промисы без async который ходит за файлом  file.jpg, если запрос успешным то идет за файлов file2.jpg, если ок, то пишет console.log('ok')
+
+промис который принимает файл, ждет 5 секунд и потом идет за файлом, возвращает результат получения файла
+
+промис который кидает ошибку через N секунд -->
